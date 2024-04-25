@@ -24,6 +24,7 @@ function ImageSlider() {
         };
       });
 
+      // here it changes the image  every few seconds and when it reaches the last image returns to first image
     const nextSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
     };

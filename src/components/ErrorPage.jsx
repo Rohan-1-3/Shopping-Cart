@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function ErrorPage(props) {
+function ErrorPage() {
     return (
         <div>
             Hello you landed in wrong url

@@ -2,20 +2,14 @@ import SpaIcon from '@mui/icons-material/Spa';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from "../../css/Navbar.module.css"
 import MenuItem from './MenuItem';
+import PropTypes from "prop-types";
 
-function NavBar() {
-    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-    const [isMobile, setIsMobile] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+function NavBar({isOpen, isMobile, toggleMenu}) {
+
     const navBar = useRef(null);
-
-  // Function to update the viewport width in state
-    const updateViewportWidth = () => {
-        setViewportWidth(window.innerWidth);
-    };
 
     // makes sure the cart is disabled when menu is open
     useEffect(() => {
@@ -36,33 +30,6 @@ function NavBar() {
         };
     }, [isOpen]);
 
-
-
-    // if the screen is resized to landscape close the menu
-    useEffect(()=>{
-        if(!isMobile) {
-            setIsOpen(false);
-        }
-    },[isMobile])
-
-    // managing the media at which transition occurs
-    useEffect(()=>{
-        viewportWidth < 550 ? setIsMobile(true) : setIsMobile(false);
-    },[viewportWidth])
-
-    useEffect(() => {
-        window.addEventListener('resize', updateViewportWidth);
-
-        // Remove event listener when component unmounts
-        return () => {
-          window.removeEventListener('resize', updateViewportWidth);
-        };
-      });
-
-      // function to toggle the menu open and close
-      const toggleMenu  = () => {
-        setIsOpen(prevIsOpen => !prevIsOpen)
-      }
 
     return (
         <div className={styles.navBarContainer}>
@@ -106,6 +73,12 @@ function NavBar() {
             </div>
         </div>
     );
+}
+
+NavBar.propTypes = {
+    isOpen: PropTypes.bool,
+    isMobile : PropTypes.bool,
+    toggleMenu: PropTypes.func,
 }
 
 export default NavBar;
