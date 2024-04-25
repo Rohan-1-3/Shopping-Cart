@@ -40,3 +40,16 @@
       box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* End with a stronger blue glow */
     }
 }
+
+@media screen and (max-width: 768px) {
+    .initialPage{
+        background-image: url("https://res.cloudinary.com/fetch-images/image/upload/c_crop,h_1.00,w_0.50/shoppingCart/car_gif.gif");
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .initialPage h1{
+        animation: none;
+        margin: 0;
+    }
+}
