@@ -1,0 +1,48 @@
+.menuContainer {
+    position: absolute;
+    top: 0;
+    left: -1.2rem;
+    width: 50%;
+    transform: translateX(-200%);
+    transition: transform .3s ease-in;
+    z-index: 1;
+}
+
+.menuList {
+    padding: 1rem 3rem;
+    height: 100vh;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+}
+
+.menuHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuList ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.listItem a{
+    display: flex;
+    margin-top: 2rem;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listItem:hover{
+    opacity: .6;
+}
+
+.menuContainer.open{
+    transform: translateX(0);
+    z-index: 999;
+}
+
+.menuHeader{
+    color: black;
+    z-index: 999;
+}

@@ -1,0 +1,15 @@
+.mainContainer{
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.mainContainer a{
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 12px;
+    }
+}

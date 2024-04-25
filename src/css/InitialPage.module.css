@@ -1,0 +1,42 @@
+.initialPage{
+    background-image: url("https://i.pinimg.com/originals/3f/f5/18/3ff5188ff22ded5d23bd9f85f06ed656.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.initialPage h1{
+    color: white;
+    font-size: 1.5rem;
+    margin: 4rem;
+    padding: 1rem;
+    border: 2px solid transparent; /* Start with a transparent border */
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7); /* Add a blue glow effect */
+    animation: glow 2s infinite alternate; /* Apply the glow animation */
+    backdrop-filter: blur(1rem);
+    border-radius: .5rem;
+}
+
+.initialPage a{
+    color: rgb(239, 20, 20);
+}
+
+@keyframes glow {
+    from {
+      box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7); /* Start with a blue glow */
+    }
+    to {
+      box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* End with a stronger blue glow */
+    }
+}
