@@ -1,10 +1,10 @@
 .navBarContainer{
-    position: absolute;
+    position: sticky;
     left: 0;
     top: 0;
     width: 100%;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: transparent;
     z-index: 3;
 }
 
@@ -32,6 +32,7 @@
     font-size: 1.2rem;
     position: relative;
     transition: opacity .3s ease-in-out;
+    text-shadow: .2px 0px white;
 }
 
 .navBar, .nav{

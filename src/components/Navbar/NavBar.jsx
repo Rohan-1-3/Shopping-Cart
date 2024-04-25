@@ -1,7 +1,7 @@
 import SpaIcon from '@mui/icons-material/Spa';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from "../../css/Navbar.module.css"
 import MenuItem from './MenuItem';

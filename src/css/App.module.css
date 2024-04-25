@@ -1,7 +1,8 @@
 .mainContainer{
     margin: auto;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
+    position: relative;
 }
 
 .mainContainer a{

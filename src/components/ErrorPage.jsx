@@ -4,7 +4,7 @@ function ErrorPage(props) {
     return (
         <div>
             Hello you landed in wrong url
-            <Link to="/">Go Back</Link>
+            <Link to="/:">Go Back</Link>
         </div>
     );
 }

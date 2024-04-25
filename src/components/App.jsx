@@ -6,7 +6,7 @@ function App() {
   return (
     <div className={styles.mainContainer}>
       <NavBar />
-      <Outlet />
+      <Outlet context = {[]}/>
     </div>
   );
 }
