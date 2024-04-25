@@ -41,7 +41,12 @@ function App() {
   return (
     <div className={styles.mainContainer}>
       <NavBar isOpen={isOpen} isMobile={isMobile} toggleMenu={toggleMenu} />
-      <Outlet context = {[]}/>
+      <Outlet context = {
+        {
+          menuOpen : [isOpen, setIsOpen],
+          viewportWidth : [viewportWidth, setViewportWidth]
+        }
+      }/>
     </div>
   );
 }

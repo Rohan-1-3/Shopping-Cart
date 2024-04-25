@@ -1,28 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../../css/HomePage.module.css";
 import { imagesBig, imagesSmall } from "../../data/ImagesData";
+import { useOutletContext } from 'react-router-dom';
 
 function ImageSlider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [images, setImages] = useState([]);
-    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-
-    const updateViewportWidth = () => {
-        setViewportWidth(window.innerWidth);
-    };
+    const viewportWidth = useOutletContext().viewportWidth[0];
 
     useEffect(()=>{
         viewportWidth < 550 ? setImages(imagesSmall) : setImages(imagesBig);
     },[viewportWidth])
-
-    useEffect(() => {
-        window.addEventListener('resize', updateViewportWidth);
-
-        // Remove event listener when component unmounts
-        return () => {
-          window.removeEventListener('resize', updateViewportWidth);
-        };
-      });
 
       // here it changes the image  every few seconds and when it reaches the last image returns to first image
     const nextSlide = () => {
