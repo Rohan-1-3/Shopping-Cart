@@ -6,7 +6,6 @@ function HomePage() {
 
   const isOpen = useOutletContext().menuOpen[0];
 
-
     return (
         <div className={`${styles.homepage} ${isOpen ? "disabled" : ""}`}>
           <ImageSlider />

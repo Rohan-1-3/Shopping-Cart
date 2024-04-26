@@ -10,7 +10,7 @@ function App() {
 
     const updateViewportWidth = () => {
       setViewportWidth(window.innerWidth);
-  };
+    };
 
   // if the screen is resized to landscape close the menu
     useEffect(()=>{
@@ -34,12 +34,12 @@ function App() {
       });
 
       // function to toggle the menu open and close
-      const toggleMenu  = () => {
-        setIsOpen(prevIsOpen => !prevIsOpen)
-      }
+    const toggleMenu  = () => {
+      setIsOpen(prevIsOpen => !prevIsOpen)
+    }
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={`${styles.mainContainer} roboto-regular` }>
       <NavBar isOpen={isOpen} isMobile={isMobile} toggleMenu={toggleMenu} />
       <Outlet context = {
         {

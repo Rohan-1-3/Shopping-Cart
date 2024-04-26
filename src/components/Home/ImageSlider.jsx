@@ -48,7 +48,6 @@ function ImageSlider() {
                 &#10095;
                 </button>
             </div>
-
         </React.Fragment>
     );
 }
