@@ -3,6 +3,7 @@ import styles from "../../css/HomePage.module.css";
 import ImageSlider from "./ImageSlider";
 import CallToAction from "./CallToAction";
 import Reviews from "./Reviews";
+import Footer from "./Footer";
 
 function HomePage() {
 
@@ -13,6 +14,7 @@ function HomePage() {
           <ImageSlider />
           <CallToAction />
           <Reviews />
+          <Footer />
         </div>
     );
 }

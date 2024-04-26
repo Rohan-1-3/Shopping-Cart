@@ -73,6 +73,10 @@ ul{
   list-style: none;
 }
 
+a:hover{
+  opacity: .6;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

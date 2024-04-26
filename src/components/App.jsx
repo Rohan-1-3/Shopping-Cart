@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import NavBar from "./Navbar/NavBar";
 import styles from "../css/App.module.css"
 import { useEffect, useState } from "react";
+import MainFooter from "./MainFooter";
 
 function App() {
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className={`${styles.mainContainer} roboto-regular` }>
       <NavBar isOpen={isOpen} isMobile={isMobile} toggleMenu={toggleMenu} />
+      <MainFooter />
       <Outlet context = {
         {
           menuOpen : [isOpen, setIsOpen],
