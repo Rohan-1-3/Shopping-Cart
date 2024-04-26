@@ -13,7 +13,7 @@ function FooterRight() {
                     <ul>
                         {item.children.map(child => (
                             <li key={child.label}>
-                                <a href={child.path}  target="_blank">{child.label}</a>
+                                <a href={child.path}>{child.label}</a>
                             </li>
                         ))}
                     </ul>

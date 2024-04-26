@@ -1,3 +1,4 @@
+import About from "./About/About";
 import App from "./App";
 import ErrorPage from "./ErrorPage";
 import HomePage from "./Home/HomePage";
@@ -16,6 +17,10 @@ const routes = [
             {
                 path : "/home",
                 element : <HomePage />
+            },
+            {
+                path : "/about",
+                element : <About />
             },
         ]
     },
