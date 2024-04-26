@@ -1,6 +1,8 @@
 import { useOutletContext } from "react-router-dom";
 import styles from "../../css/HomePage.module.css";
 import ImageSlider from "./ImageSlider";
+import CallToAction from "./CallToAction";
+import Reviews from "./Reviews";
 
 function HomePage() {
 
@@ -9,6 +11,8 @@ function HomePage() {
     return (
         <div className={`${styles.homepage} ${isOpen ? "disabled" : ""}`}>
           <ImageSlider />
+          <CallToAction />
+          <Reviews />
         </div>
     );
 }

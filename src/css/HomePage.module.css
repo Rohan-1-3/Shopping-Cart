@@ -1,5 +1,7 @@
 .homepage{
     color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 .sliderContainer {
@@ -40,3 +42,72 @@
   .nextButton {
     right: 0;
   }
+
+.callToAction{
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid black;
+}
+
+  .callToAction p{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .callToAction button{
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+
+.reviewsSection{
+  padding: 3rem;
+  border: 1px solid red;
+}
+
+.reviewsSection h2{
+  font-size: 3.5rem;
+}
+
+.reviewCards{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.reviewCard{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.135);
+}
+
+.reviewCard img{
+  width: 10rem;
+  border-radius: 50%;
+  margin: auto;
+}
+
+@media screen and (max-width:1000px) {
+  .reviewCard{
+    width: 40%;
+    margin: 1rem;
+  }
+
+}
+
+@media screen and (max-width:550px) {
+
+
+  .reviewCard{
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+}
