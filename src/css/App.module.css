@@ -20,9 +20,3 @@
 .mainFooter p{
     margin: 0;
 }
-
-@media screen and (max-width: 768px) {
-    html{
-        font-size: 12px;
-    }
-}
