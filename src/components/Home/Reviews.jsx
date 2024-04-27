@@ -1,38 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useOutletContext } from "react-router-dom";
 import styles from "../../css/HomePage.module.css"
 
 const MyComponent = () => {
-  const [fetchedData, setFetchedData] = useState(null);
-  const [userData, setUserData] = useState(null);
 
-  useEffect(()=>{
-    if(fetchedData){
-        const users = fetchedData.results.map(user =>({
-            firstName : user.name.first,
-            lastName : user.name.last,
-            image : user.picture.large
-        }))
-    setUserData(users)
-    }
-  },[fetchedData])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://randomuser.me/api/?results=4');
-        if (!response.ok) {
-          throw new Error('Failed to fetch user data');
-        }
-        const data = await response.json();
-        setFetchedData(data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
- // This will log the fetched data once it's available
+  const userData = useOutletContext().userData;
 
   return (
     <div className={styles.reviewsSection}>

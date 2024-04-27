@@ -7,7 +7,7 @@ import styles from "../../css/Navbar.module.css"
 import MenuItem from './MenuItem';
 import PropTypes from "prop-types";
 
-function NavBar({isOpen, isMobile, toggleMenu}) {
+function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
 
     const navBar = useRef(null);
 
@@ -44,7 +44,7 @@ function NavBar({isOpen, isMobile, toggleMenu}) {
                             <span>Habibi Rides</span>
                         </Link>
                         <div onClick={()=>console.log("here")} className={styles.cart}>
-                             Cart <sup>0</sup>
+                             Cart <sup>{cartLength}</sup>
                         </div>
                     </React.Fragment> :
                     <React.Fragment>
@@ -56,10 +56,10 @@ function NavBar({isOpen, isMobile, toggleMenu}) {
                             <ul className={styles.navList}>
                                 <li className={styles.navItem}><Link to="/home">Home</Link></li>
                                 <li className={styles.navItem}><Link to="/about">About</Link></li>
-                                <li className={styles.navItem}><Link to="/">Products</Link></li>
+                                <li className={styles.navItem}><Link to="/products">Products</Link></li>
                                 <li className={styles.navItem}>
                                     <div className={styles.cart}>
-                                        Cart <sup>0</sup>
+                                        Cart <sup>{cartLength}</sup>
                                     </div>
                                 </li>
                             </ul>
@@ -79,6 +79,7 @@ NavBar.propTypes = {
     isOpen: PropTypes.bool,
     isMobile : PropTypes.bool,
     toggleMenu: PropTypes.func,
+    cartLength : PropTypes.number
 }
 
 export default NavBar;
