@@ -23,7 +23,7 @@ function FooterRight() {
     )
 }
 
-function Footer(props) {
+function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerLeft}>

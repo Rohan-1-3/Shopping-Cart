@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "../../css/HomePage.module.css"
 
-function CallToAction(props) {
+function CallToAction() {
     return (
         <div className={styles.callToAction}>
             <h1>Drive into Your Dream: Your Ultimate Car Shopping Destination!</h1>

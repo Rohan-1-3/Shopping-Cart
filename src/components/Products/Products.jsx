@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import { useOutletContext } from 'react-router-dom';
 
 function Products() {
-    const handleAdd = useOutletContext().handleAdd;
+    const handleAdd = useOutletContext().handleAddToCart;
     const isOpen = useOutletContext().menuOpen[0];
 
     return (
@@ -17,7 +17,7 @@ function Products() {
                     productName={car.productName}
                     model={car.model}
                     price={car.price}
-                    onAddToCart={() => handleAdd(car.id)} // Assuming you have a function to handle adding to cart
+                    onAddToCart={() => handleAdd(car.id)}
                 />
             ))}
             </div>

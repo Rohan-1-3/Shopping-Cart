@@ -2,39 +2,17 @@ import SpaIcon from '@mui/icons-material/Spa';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from "../../css/Navbar.module.css"
 import MenuItem from './MenuItem';
-import PropTypes from "prop-types";
+import { NavBarProp } from '../../Proptypes/PropTypes';
 
 function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
-
-    const navBar = useRef(null);
-
-    // makes sure the cart is disabled when menu is open
-    useEffect(() => {
-        const navBarElement = navBar.current;
-        if (navBarElement) {
-            if (isOpen) {
-                navBarElement.classList.add('disabled');
-            } else {
-                navBarElement.classList.remove('disabled');
-            }
-        }
-
-        // Cleanup: remove the "disabled" class when component unmounts
-        return () => {
-            if (navBarElement) {
-                navBarElement.classList.remove('disabled');
-            }
-        };
-    }, [isOpen]);
-
 
     return (
         <div className={styles.navBarContainer}>
             <MenuItem isMobile={isMobile} isOpen={isOpen} onClick={toggleMenu}/>
-            <div ref={navBar} className={`${styles.navBar} ${isOpen ? "disabled" : ""}`}>
+            <div className={`${styles.navBar} ${isOpen ? "disabled" : ""}`}>
                 {
                     isMobile ?
                     <React.Fragment>
@@ -75,11 +53,6 @@ function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
     );
 }
 
-NavBar.propTypes = {
-    isOpen: PropTypes.bool,
-    isMobile : PropTypes.bool,
-    toggleMenu: PropTypes.func,
-    cartLength : PropTypes.number
-}
+NavBar.propTypes = NavBarProp;
 
 export default NavBar;

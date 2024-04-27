@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../../css/HomePage.module.css";
 import { imagesBig, imagesSmall } from "../../data/ImagesData";
-import { useOutletContext } from 'react-router-dom';
+import { useViewportWidth } from '../../customHooks/viewportWidth';
 
 function ImageSlider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [images, setImages] = useState([]);
-    const viewportWidth = useOutletContext().viewportWidth[0];
+    const viewportWidth = useViewportWidth();
 
     useEffect(()=>{
         viewportWidth < 550 ? setImages(imagesSmall) : setImages(imagesBig);

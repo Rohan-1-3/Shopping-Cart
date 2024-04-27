@@ -1,6 +1,6 @@
 import styles from "../../css/Products.module.css"
+import { ProductCardProp } from "../../Proptypes/PropTypes";
 
-// eslint-disable-next-line react/prop-types
 const ProductCard = ({ imageUrl, productName, model, price, onAddToCart }) => {
     return (
         <div className={styles.productCard}>
@@ -14,5 +14,7 @@ const ProductCard = ({ imageUrl, productName, model, price, onAddToCart }) => {
         </div>
     );
 };
+
+ProductCard.propTypes = ProductCardProp;
 
 export default ProductCard;

@@ -1,20 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "../../css/MenuItem.module.css";
-import PropTypes from "prop-types";
 import SpaIcon from '@mui/icons-material/Spa';
 import MenuIcon from '@mui/icons-material/Menu';
 import { menuItems } from "../../data/MenuData";
-import { useRef } from "react";
-
+import { MenuItemLinkProp, MenuItemProp } from "../../Proptypes/PropTypes";
 function MenuItem({ isMobile, isOpen, onClick}) {
-
-    const  menuContainer = useRef(null);
 
     return (
         <div
         className={`${styles.menuContainer} ${isMobile && isOpen ? styles.open : ""}`}
         >
-        <div ref={menuContainer} className={styles.menuList}>
+        <div className={styles.menuList}>
             <div className={styles.menuHeader}>
             <MenuIcon fontSize="large" onClick={onClick} />
             <SpaIcon fontSize="large" />
@@ -50,15 +46,7 @@ function MenuItemLink({ item, onClick }) {
   );
 }
 
-MenuItem.propTypes = {
-  isMobile: PropTypes.bool,
-  isOpen: PropTypes.bool,
-  onClick: PropTypes.func,
-};
-
-MenuItemLink.propTypes = {
-    item : PropTypes.object,
-    onClick: PropTypes.func,
-}
+MenuItem.propTypes = MenuItemProp;
+MenuItemLink.propTypes = MenuItemLinkProp;
 
 export default MenuItem;

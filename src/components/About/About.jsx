@@ -37,7 +37,7 @@ function About() {
                 </div>
             </div>
             <div className="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120683.96532943814!2d85.29498290657098!3d27.801601810993677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1714148674304!5m2!1sen!2snp" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120683.96532943814!2d85.29498290657098!3d27.801601810993677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1714148674304!5m2!1sen!2snp" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     );

@@ -1,9 +1,9 @@
-import { useOutletContext } from "react-router-dom";
 import styles from "../../css/HomePage.module.css"
+import { useUserData } from "../../customHooks/useUserData";
 
 const MyComponent = () => {
 
-  const userData = useOutletContext().userData;
+  const userData = useUserData();
 
   return (
     <div className={styles.reviewsSection}>
