@@ -37,14 +37,14 @@ export const carData = [
     {
         id: 6,
         imageUrl: "https://res.cloudinary.com/fetch-images/image/upload/f_auto/shoppingCart/car2.jpg",
-        productName: "Car D",
+        productName: "Car F",
         model: "Model P",
         price: 20000
     },
     {
         id: 7,
         imageUrl: "https://res.cloudinary.com/fetch-images/image/upload/f_auto/shoppingCart/car1.jpg",
-        productName: "Car E",
+        productName: "Car G",
         model: "Model Q",
         price: 28000
     },

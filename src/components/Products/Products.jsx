@@ -6,9 +6,10 @@ import { useOutletContext } from 'react-router-dom';
 function Products() {
     const handleAdd = useOutletContext().handleAddToCart;
     const isOpen = useOutletContext().menuOpen[0];
+    const isCartOpen = useOutletContext().isCartOpen;
 
     return (
-        <div className={`${styles.products} ${isOpen ? "disabled" : ""}`}>
+        <div className={`${styles.products} ${isOpen || isCartOpen ? "disabled" : ""}`}>
             <div className={styles.productCards}>
             {carData.map((car) => (
                 <ProductCard

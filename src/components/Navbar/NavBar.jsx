@@ -7,12 +7,12 @@ import styles from "../../css/Navbar.module.css"
 import MenuItem from './MenuItem';
 import { NavBarProp } from '../../Proptypes/PropTypes';
 
-function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
+function NavBar({isOpen, isMobile, toggleMenu, isCartOpen ,toggleCart,cartLength}) {
 
     return (
         <div className={styles.navBarContainer}>
             <MenuItem isMobile={isMobile} isOpen={isOpen} onClick={toggleMenu}/>
-            <div className={`${styles.navBar} ${isOpen ? "disabled" : ""}`}>
+            <div className={`${styles.navBar} ${isOpen || isCartOpen ? "disabled" : ""}`}>
                 {
                     isMobile ?
                     <React.Fragment>
@@ -21,7 +21,7 @@ function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
                             <SpaIcon fontSize='large' />
                             <span>Habibi Rides</span>
                         </Link>
-                        <div onClick={()=>console.log("here")} className={styles.cart}>
+                        <div onClick={toggleCart} className={styles.cart}>
                              Cart <sup>{cartLength}</sup>
                         </div>
                     </React.Fragment> :
@@ -36,7 +36,7 @@ function NavBar({isOpen, isMobile, toggleMenu, cartLength}) {
                                 <li className={styles.navItem}><Link to="/about">About</Link></li>
                                 <li className={styles.navItem}><Link to="/products">Products</Link></li>
                                 <li className={styles.navItem}>
-                                    <div className={styles.cart}>
+                                    <div className={styles.cart} onClick={toggleCart}>
                                         Cart <sup>{cartLength}</sup>
                                     </div>
                                 </li>

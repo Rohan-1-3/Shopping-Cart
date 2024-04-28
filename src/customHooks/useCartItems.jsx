@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { carData } from "../data/CarData";
 
 export function useCartItems(){
     const [cartItems, setCartItems] = useState([]);
+
+    useEffect(()=>{
+      const some =  cartItems.find(item => item.amount === 0)
+      if(some){
+        handleRemoveItemFromCart(some.id)
+      }
+    },[cartItems])
 
     const handleAddToCart = (id) => {
       // Check if the item with the provided id already exists in the cart
@@ -10,10 +17,7 @@ export function useCartItems(){
 
       if (existingItemIndex !== -1) {
           // If the item exists in the cart, update its quantity
-          const updatedCartItems = cartItems.map((item, index) =>
-              index === existingItemIndex ? { ...item, amount: item.amount + 1 } : item
-          );
-          setCartItems(updatedCartItems);
+          handleIncreaseItemAmount(id)
       } else {
           // If the item doesn't exist in the cart, add it with quantity 1
           const newItem = carData.find(car => car.id === id);
@@ -24,6 +28,7 @@ export function useCartItems(){
     const handleRemoveItemFromCart = (id)=>{
       const updatedCartItems = cartItems.filter(item => item.id !== id)
       setCartItems(updatedCartItems);
+      return updatedCartItems;
     }
 
     const handleIncreaseItemAmount = (id) => {
@@ -62,11 +67,7 @@ export function useCartItems(){
         const updatedCartItems = cartItems.map((item, index) =>{
 
           if(index === existingItemIndex){
-              if(item.amount > 1){
-                return {...item , amount: item.amount-1}
-              }else{
-                  return handleRemoveItemFromCart(item.id)
-              }
+              return {...item , amount: item.amount-1}
           }else{
             return item;
           }

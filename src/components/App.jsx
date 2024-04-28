@@ -6,13 +6,14 @@ import MainFooter from "./MainFooter";
 import { useViewportWidth } from "../customHooks/viewportWidth";
 import { useCartItems } from "../customHooks/useCartItems";
 import styles from "../css/App.module.css"
+import Cart from "./Cart/Cart";
 
 function App() {
     const viewportWidth = useViewportWidth();
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, handleAddToCart] = useCartItems(false);
+    const [cartItems, handleAddToCart, handleRemoveItemFromCart, handleIncreaseItemAmount, handleDecreaseItemAmount] = useCartItems();
     const [isLogIn, setIsLogin] = useState(false);
 
     useEffect(()=>{
@@ -52,14 +53,27 @@ function App() {
           isOpen={isMenuOpen}
           isMobile={isMobile}
           toggleMenu={toggleMenu}
-          isCartOpen = {isCartOpen}
           toggleCart = {toggleCart}
-          cartLength = {cartItems.length}/>
+          cartLength = {cartItems.length}
+          isCartOpen={isCartOpen}
+          />
+
+          <Cart
+            cartItems ={ cartItems}
+            handleAddToCart = {handleAddToCart}
+            handleRemoveItemFromCart = {handleRemoveItemFromCart}
+            handleDecreaseItemAmount = {handleDecreaseItemAmount}
+            handleIncreaseItemAmount = {handleIncreaseItemAmount}
+            isCartOpen = {isCartOpen}
+            toggleCart = {toggleCart}
+          />
           <MainFooter />
           <Outlet context = {
             {
               menuOpen : [isMenuOpen, setIsMenuOpen],
+              isCartOpen : isCartOpen,
               handleAddToCart : handleAddToCart,
+
             }
           }/>
         </React.Fragment> : (
