@@ -11,7 +11,7 @@ function CartItem({item, handleRemoveItemFromCart, handleIncreaseItemAmount, han
             <div className={styles.itemText}>
                 <p>{item.productName}</p>
                 <p>{item.model}</p>
-                <p>Price: {item.price}</p>
+                <p>Price: ${item.price}</p>
                 <p>Quantity: {item.amount}</p>
                 <div className={styles.cartItemIcon}>
                     <AddIcon onClick={()=>handleIncreaseItemAmount(item.id)}/>

@@ -42,7 +42,7 @@ function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount,
                         }
                     </div>
                 }
-                <h3>Total Amout: {totalCost}</h3>
+                <h3>Total Amount: ${totalCost}</h3>
                 <Link className={cartItems.length === 0 ? "disabled" : ""} to="/home"><button  onClick={handleCheckout}>Checkout</button></Link>
             </div>
         </div>
