@@ -1,7 +1,4 @@
-import React from 'react';
-
-function Cart(props) {
-    
+function Cart() {
 
     return (
         <div className='cart'>
