@@ -13,7 +13,8 @@ function App() {
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, handleAddToCart, handleRemoveItemFromCart, handleIncreaseItemAmount, handleDecreaseItemAmount] = useCartItems();
+    const [cartItems, handleAddToCart, handleRemoveItemFromCart,
+      handleIncreaseItemAmount, handleDecreaseItemAmount, emptyCart] = useCartItems();
     const [isLogIn, setIsLogin] = useState(false);
 
     useEffect(()=>{
@@ -66,6 +67,7 @@ function App() {
             handleIncreaseItemAmount = {handleIncreaseItemAmount}
             isCartOpen = {isCartOpen}
             toggleCart = {toggleCart}
+            emptyCart = {emptyCart}
           />
           <MainFooter />
           <Outlet context = {

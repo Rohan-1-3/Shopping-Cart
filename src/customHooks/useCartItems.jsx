@@ -11,6 +11,8 @@ export function useCartItems(){
       }
     },[cartItems])
 
+    const emptyCart = ()=> setCartItems([]);
+
     const handleAddToCart = (id) => {
       // Check if the item with the provided id already exists in the cart
       const existingItemIndex = cartItems.findIndex(item => item.id === id);
@@ -76,5 +78,5 @@ export function useCartItems(){
     }
     }
 
-    return [cartItems, handleAddToCart, handleRemoveItemFromCart, handleIncreaseItemAmount, handleDecreaseItemAmount];
+    return [cartItems, handleAddToCart, handleRemoveItemFromCart, handleIncreaseItemAmount, handleDecreaseItemAmount, emptyCart];
 }

@@ -4,7 +4,8 @@ import styles from "../../css/Cart.module.css"
 import CloseIcon from '@mui/icons-material/Close';
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
-function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount, handleDecreaseItemAmount, isCartOpen, toggleCart}) {
+function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount,
+    handleDecreaseItemAmount, isCartOpen, toggleCart, emptyCart}) {
     const [totalCost, setTotalCost] = useState(0);
 
     useEffect(()=>{
@@ -15,6 +16,12 @@ function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount, ha
 
     },[cartItems])
 
+    const handleCheckout = ()=>{
+        alert("Purchase Completed! You are directed to homepage");
+        toggleCart();
+        emptyCart();
+    }
+
     return (
         <div className={`${styles.cart} ${isCartOpen ? styles.cartOpen : ""}`}>
             <div className={styles.cartContainer}>
@@ -24,7 +31,7 @@ function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount, ha
                 </div>
                 {
                     cartItems.length === 0 ?
-                    <div className={styles.emptyCart}>Your cart is Empty</div>
+                    <div className={styles.emptyCart}>Your cart is Empty. <span onClick={toggleCart}>Go back</span> to shopping.</div>
                     :<div className={styles.cartItems}>
                         {
                             cartItems.map(item => <CartItem key={item.id} item={item}
@@ -36,7 +43,7 @@ function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount, ha
                     </div>
                 }
                 <h3>Total Amout: {totalCost}</h3>
-                <Link to="/checkout"><button>Checkout</button></Link>
+                <Link className={cartItems.length === 0 ? "disabled" : ""} to="/home"><button  onClick={handleCheckout}>Checkout</button></Link>
             </div>
         </div>
     );

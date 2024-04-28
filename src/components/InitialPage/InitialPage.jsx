@@ -4,9 +4,10 @@ import styles from "../../css/InitialPage.module.css"
 function InitialPage() {
 
     const isOpen = useOutletContext().menuOpen[0];
+    const isCartOpen = useOutletContext().isCartOpen;
 
     return (
-        <div className={`${styles.initialPage} ${isOpen ? "disabled" : ""}`}>
+        <div className={`${styles.initialPage} ${isOpen || isCartOpen? "disabled" : ""}`}>
             <h1>
                 Welcome to our Cars Emporium! <br/><br/>
                 <span>To begin your car-shopping adventure, simply click here to visit our

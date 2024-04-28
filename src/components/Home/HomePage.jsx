@@ -8,9 +8,10 @@ import Footer from "./Footer";
 function HomePage() {
 
   const isOpen = useOutletContext().menuOpen[0];
+  const isCartOpen = useOutletContext().isCartOpen;
 
     return (
-        <div className={`${styles.homepage} ${isOpen ? "disabled" : ""}`}>
+        <div className={`${styles.homepage} ${isOpen || isCartOpen? "disabled" : ""}`}>
           <ImageSlider />
           <CallToAction />
           <Reviews />

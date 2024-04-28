@@ -96,6 +96,14 @@ a:hover{
   opacity: .4;
 }
 
+svg{
+  cursor: pointer;
+}
+
+svg:hover{
+  opacity: .6;
+}
+
 @media screen and (max-width: 768px) {
   html{
       font-size: 12px;

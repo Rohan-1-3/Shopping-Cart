@@ -7,9 +7,10 @@ import { useOutletContext } from 'react-router-dom';
 
 function About() {
     const isOpen = useOutletContext().menuOpen[0];
+    const isCartOpen = useOutletContext().isCartOpen;
 
     return (
-        <div className={`${styles.aboutUs} ${isOpen ? "disabled" : ""}`}>
+        <div className={`${styles.aboutUs} ${isOpen || isCartOpen ? "disabled" : ""}`}>
             <div className={styles.aboutUsText}>
                 <h3>Welcome to Habibi Rides!</h3>
                 <p>At Habibi Rides, we're more than just a car dealership - we're a community of car enthusiasts dedicated to helping you find the perfect vehicle to fit your lifestyle. </p>
