@@ -6,7 +6,7 @@ import Reviews from "./Reviews";
 import Footer from "./Footer";
 
 function HomePage() {
-
+  // to disable any activties outside the opened screen
   const isOpen = useOutletContext().menuOpen[0];
   const isCartOpen = useOutletContext().isCartOpen;
 

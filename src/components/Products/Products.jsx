@@ -5,6 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 
 function Products() {
     const handleAdd = useOutletContext().handleAddToCart;
+    // to disable any activties outside the opened screen
     const isOpen = useOutletContext().menuOpen[0];
     const isCartOpen = useOutletContext().isCartOpen;
 

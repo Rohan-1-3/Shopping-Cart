@@ -7,9 +7,11 @@ import { useViewportWidth } from "../customHooks/viewportWidth";
 import { useCartItems } from "../customHooks/useCartItems";
 import styles from "../css/App.module.css"
 import Cart from "./Cart/Cart";
+import { useUserData } from "../customHooks/useUserData";
 
 function App() {
     const viewportWidth = useViewportWidth();
+    const userData = useUserData();
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -17,6 +19,7 @@ function App() {
       handleIncreaseItemAmount, handleDecreaseItemAmount, emptyCart] = useCartItems();
     const [isLogIn, setIsLogin] = useState(false);
 
+    // keep the login info for the session
     useEffect(()=>{
       setIsLogin(sessionStorage.getItem("login") === "true")
     },[])
@@ -75,7 +78,7 @@ function App() {
               menuOpen : [isMenuOpen, setIsMenuOpen],
               isCartOpen : isCartOpen,
               handleAddToCart : handleAddToCart,
-
+              userData: userData,
             }
           }/>
         </React.Fragment> : (

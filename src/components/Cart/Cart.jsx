@@ -12,7 +12,7 @@ function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount,
         return cartItems.reduce((sum, item) => sum + (item.amount * item.price), 0);
     }, [cartItems]);
 
-    const handleCheckout = ()=>{
+    const handleCheckout = ()=>{ // closes the menu and empties the cart
         alert("Purchase Completed! You are directed to homepage");
         toggleCart();
         emptyCart();

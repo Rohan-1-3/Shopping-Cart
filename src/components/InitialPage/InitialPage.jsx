@@ -2,7 +2,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import styles from "../../css/InitialPage.module.css"
 
 function InitialPage() {
-
+    // to disable any activties outside the opened screen
     const isOpen = useOutletContext().menuOpen[0];
     const isCartOpen = useOutletContext().isCartOpen;
 

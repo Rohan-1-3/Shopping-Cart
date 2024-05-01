@@ -1,9 +1,10 @@
+import { memo } from "react";
 import styles from "../../css/HomePage.module.css"
-import { useUserData } from "../../customHooks/useUserData";
+import { useOutletContext } from "react-router-dom";
 
-const MyComponent = () => {
+const Reviews = memo(function Reviews(){
 
-  const userData = useUserData();
+  const userData = useOutletContext().userData;
 
   return (
     <div className={styles.reviewsSection}>
@@ -21,6 +22,6 @@ const MyComponent = () => {
         </div>
     </div>
   );
-};
+});
 
-export default MyComponent;
+export default Reviews;

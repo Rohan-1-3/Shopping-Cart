@@ -8,11 +8,11 @@ function ImageSlider() {
     const [images, setImages] = useState([]);
     const viewportWidth = useViewportWidth();
 
-    useEffect(()=>{
+    useEffect(()=>{// provides a set of images in respect to the viewport size
         viewportWidth < 550 ? setImages(imagesSmall) : setImages(imagesBig);
     },[viewportWidth])
 
-      // here it changes the image  every few seconds and when it reaches the last image returns to first image
+    // here it changes the image  every few seconds and when it reaches the last image returns to first image
     const nextSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
     };
@@ -21,12 +21,13 @@ function ImageSlider() {
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
     };
 
+    // automatically slides the picture after a certain delay
     useEffect(() => {
         const intervalId = setInterval(() => {
           setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
         }, 3000);
 
-        return () => {
+        return () => {// handling unmount
           clearInterval(intervalId);
         };
       }, [images.length]);

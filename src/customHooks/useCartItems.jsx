@@ -4,6 +4,7 @@ import { carData } from "../data/CarData";
 export function useCartItems(){
     const [cartItems, setCartItems] = useState([]);
 
+    // removes item from cart having amount 0
     useEffect(()=>{
       const some =  cartItems.find(item => item.amount === 0)
       if(some){
@@ -11,7 +12,7 @@ export function useCartItems(){
       }
     },[cartItems])
 
-    const emptyCart = ()=> setCartItems([]);
+    const emptyCart = ()=> setCartItems([]);// emptying cart items
 
     const handleAddToCart = (id) => {
       // Check if the item with the provided id already exists in the cart
