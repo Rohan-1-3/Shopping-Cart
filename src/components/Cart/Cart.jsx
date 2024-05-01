@@ -3,18 +3,14 @@ import { CartProp } from "../../Proptypes/PropTypes";
 import styles from "../../css/Cart.module.css"
 import CloseIcon from '@mui/icons-material/Close';
 import CartItem from "./CartItem";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 function Cart({cartItems, handleRemoveItemFromCart, handleIncreaseItemAmount,
     handleDecreaseItemAmount, isCartOpen, toggleCart, emptyCart}) {
-    const [totalCost, setTotalCost] = useState(0);
 
-    useEffect(()=>{
-       const some = cartItems.map(item => item.amount * item.price)
-       let sum = 0;
-       some.forEach((el) => sum += el)
-       setTotalCost(sum)
-
-    },[cartItems])
+    // calculation of total cost by memoizing the function
+    const totalCost = useMemo(() => {
+        return cartItems.reduce((sum, item) => sum + (item.amount * item.price), 0);
+    }, [cartItems]);
 
     const handleCheckout = ()=>{
         alert("Purchase Completed! You are directed to homepage");

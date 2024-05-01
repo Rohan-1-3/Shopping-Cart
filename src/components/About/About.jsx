@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -6,6 +5,7 @@ import styles from "../../css/About.module.css"
 import { useOutletContext } from 'react-router-dom';
 
 function About() {
+    // to disable any activties outside the opened screen
     const isOpen = useOutletContext().menuOpen[0];
     const isCartOpen = useOutletContext().isCartOpen;
 
@@ -13,9 +13,9 @@ function About() {
         <div className={`${styles.aboutUs} ${isOpen || isCartOpen ? "disabled" : ""}`}>
             <div className={styles.aboutUsText}>
                 <h3>Welcome to Habibi Rides!</h3>
-                <p>At Habibi Rides, we're more than just a car dealership - we're a community of car enthusiasts dedicated to helping you find the perfect vehicle to fit your lifestyle. </p>
-                <p>Habibi Rides was born out of a love for cars and a desire to create a seamless car-buying experience. As avid car enthusiasts ourselves, we understand the thrill of finding the right vehicle and the importance of trust when making such a significant purchase. That's why we've made it our mission to provide a curated selection of quality vehicles and outstanding customer service.</p>
-                <p>We're here to help you find your dream car! If you have any questions or need assistance, don't hesitate to reach out to our friendly team or stop by our showroom to see our impressive selection in person.</p>
+                <p>At Habibi Rides, we{"'"}re more than just a car dealership - we{"'"}re a community of car enthusiasts dedicated to helping you find the perfect vehicle to fit your lifestyle. </p>
+                <p>Habibi Rides was born out of a love for cars and a desire to create a seamless car-buying experience. As avid car enthusiasts ourselves, we understand the thrill of finding the right vehicle and the importance of trust when making such a significant purchase. That{"'"}s why we{"'"}ve made it our mission to provide a curated selection of quality vehicles and outstanding customer service.</p>
+                <p>We{"'"}re here to help you find your dream car! If you have any questions or need assistance, don{"'"}t hesitate to reach out to our friendly team or stop by our showroom to see our impressive selection in person.</p>
             </div>
 
             <div className={styles.aboutUsImage}>
