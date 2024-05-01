@@ -41,17 +41,32 @@ The project is built using the following technologies:
 To run the Luxury Car Shopping Cart locally on your machine, follow these steps:
 
 1. Clone the repository to your local machine:
-```git clone https://github.com/Rohan-1-3/Shopping-Cart.git```
+```sh
+git clone https://github.com/Rohan-1-3/Shopping-Cart.git
+```
 
 2. Navigate to the project directory:
-```cd Shopping-Cart```
+```sh
+cd Shopping-Cart
+```
+
 3. Install dependencies using npm or yarn:
-```npm install```
+```sh
+npm install
+```
 or
-```yarn install```
+```sh
+yarn install
+```
 
 4. Start the development server:
-``` npm run dev ``` or ```yarn run dev```
+```sh
+npm run dev
+```
+or
+```sh
+yarn run dev
+```
 
 5. Open your browser and visit `http://localhost:5173` to view the application.
 
